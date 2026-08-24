@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ÉLANE — New Collection 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141414;
+  --paper:#f6f3ec;
+  --card:#fffdf9;
+  --moss:#5c6b47;
+  --moss-soft:#e4e8da;
+  --line:#deded1;
+  --ink-dim:#6b6b63;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',Arial,sans-serif;line-height:1.55}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.display{font-family:'Bebas Neue',Arial,sans-serif;letter-spacing:.01em;text-transform:uppercase}
+.serif{font-family:'DM Serif Display',Georgia,serif;font-style:italic}
+.mono{font-family:'JetBrains Mono',monospace}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.14em}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-links{display:flex;gap:22px;font-size:13px;font-weight:500;color:var(--ink-dim)}
+.nav-links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);padding:12px 22px;font-weight:600;font-size:13.5px;letter-spacing:.02em;white-space:nowrap;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-2px);background:var(--moss)}
+.btn.ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--moss);outline-offset:3px}
+
+/* marquee ticker */
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:11px 0}
+.ticker-track{display:inline-flex;gap:40px;animation:tick 26s linear infinite}
+.ticker span{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.1em;display:inline-flex;align-items:center;gap:40px}
+.ticker span::after{content:"✦";color:var(--moss);font-size:11px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
+/* hero */
+.hero{padding:64px 0 40px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim)}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--moss)}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,7.8vw,104px);line-height:.86;letter-spacing:-.01em;margin:16px 0 22px}
+.hero h1 .serif{display:block;font-size:.42em;text-transform:none;color:var(--moss);letter-spacing:0;margin-top:6px}
+.hero p{max-width:440px;color:var(--ink-dim);font-size:16px;margin-bottom:30px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.trust{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-dim)}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+.trust svg{width:14px;height:14px;stroke:var(--moss)}
+
+/* hero visual */
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-visual svg{width:100%;max-width:380px;height:auto}
+.look-tag{position:absolute;top:0;right:6%;writing-mode:vertical-rl;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.22em;color:var(--ink-dim);display:flex;align-items:center;gap:10px;height:78%}
+.look-tag::before{content:"";width:1px;height:40px;background:var(--line)}
+.spread-no{position:absolute;bottom:-6px;left:8%;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-dim)}
+
+.section{padding:80px 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
+.section-head h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4.6vw,50px);letter-spacing:.005em}
+.section-head p{color:var(--ink-dim);font-size:14.5px;max-width:380px}
+
+/* lookbook product cards */
+.look-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.look-card{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+.look-card:hover{transform:translateY(-5px);box-shadow:0 20px 34px -16px rgba(20,20,20,.22)}
+.look-top{display:flex;justify-content:space-between;align-items:flex-start;padding:16px 18px 0}
+.look-no{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-dim)}
+.look-tag-chip{background:var(--ink);color:var(--paper);font-size:10.5px;font-weight:700;letter-spacing:.06em;padding:5px 10px}
+.photo{height:230px;display:flex;align-items:center;justify-content:center;font-size:76px;margin:14px 18px 0;background:var(--moss-soft);border-radius:2px}
+.look-info{padding:18px}
+.look-info h3{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.01em;margin:0 0 8px}
+.look-info p{color:var(--ink-dim);font-size:13px;margin:0 0 14px;min-height:34px}
+.sizes{display:flex;gap:6px;margin-bottom:16px}
+.sizes span{width:28px;height:28px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--ink-dim);border-radius:50%}
+.look-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px}
+.price{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px}
+.look-link{font-size:12px;font-weight:600;color:var(--moss)}
+
+/* size guide / fabric */
+.guide{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.guide-panel{background:var(--card);border:1px solid var(--line);padding:28px}
+.guide-panel h3{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.03em;margin-bottom:18px}
+table.sizetable{width:100%;border-collapse:collapse;font-size:13px}
+table.sizetable th,table.sizetable td{text-align:center;padding:10px 6px;border-bottom:1px solid var(--line)}
+table.sizetable th{color:var(--ink-dim);font-weight:600;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em}
+table.sizetable td:first-child,table.sizetable th:first-child{text-align:left;font-weight:600}
+.swatch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.swatch{text-align:center}
+.swatch .chip{width:100%;aspect-ratio:1;border-radius:50%;margin-bottom:8px;border:1px solid var(--line)}
+.swatch span{font-size:11.5px;color:var(--ink-dim)}
+
+/* why us */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.why-card{padding:22px 4px}
+.why-card svg{width:24px;height:24px;stroke:var(--moss);margin-bottom:14px}
+.why-card h3{font-family:'Bebas Neue',sans-serif;font-size:16.5px;letter-spacing:.02em;margin-bottom:8px}
+.why-card p{color:var(--ink-dim);font-size:13px;margin:0}
+
+/* gallery masonry-ish */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:110px;gap:14px}
+.gitem{border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:30px}
+.gitem.tall{grid-row:span 2}
+
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.testi-card{background:var(--card);border:1px solid var(--line);padding:24px}
+.testi-card .stars{color:var(--moss);font-size:13px;letter-spacing:2px;margin-bottom:14px}
+.testi-card p{font-size:14px;color:var(--ink-dim);margin:0 0 16px}
+.testi-who{display:flex;justify-content:space-between;font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
+.testi-who b{font-weight:600;color:var(--ink)}
+
+/* cta */
+.cta{background:var(--ink);color:var(--paper);padding:56px 44px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.cta h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,4.2vw,46px);letter-spacing:.005em;margin-bottom:12px}
+.cta p{color:#c8c6bd;font-size:15px;max-width:420px}
+.cta .btn{background:var(--moss);color:#fff}
+.cta .btn.ghost{border-color:#c8c6bd;color:var(--paper)}
+.cta .btn.ghost:hover{background:var(--paper);color:var(--ink)}
+.cta-social{text-align:right}
+.cta-social .handle{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;color:var(--moss)}
+.cta-social p{color:#c8c6bd;font-size:12.5px;margin-top:6px}
+
+footer{padding:36px 0;border-top:1px solid var(--line)}
+.foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--ink-dim)}
+.foot-links{display:flex;gap:20px}
+.foot-links a:hover{color:var(--ink)}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:920px){
+  .hero-grid{grid-template-columns:1fr}
+  .look-tag{display:none}
+  .look-grid{grid-template-columns:1fr 1fr}
+  .guide{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .cta{grid-template-columns:1fr;text-align:left}
+  .cta-social{text-align:left}
+  .nav-links{display:none}
+}
+@media(max-width:600px){
+  .look-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .cta{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav>
+  <a class="logo" href="#top">ÉLANE</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#koleksi">Koleksi</a>
+      <a href="#guide">Size Guide</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+    <a class="btn" href="https://wa.me/6281234567890">Belanja</a>
+  </div>
+</nav>
+</div>
+
+<div class="ticker"><div class="ticker-track">
+  <span>NEW ARRIVAL SETIAP MINGGU ✦ FREE ONGKIR AREA CIREBON ✦ REAL PICTURE 100% ✦ BISA TUKAR UKURAN ✦</span>
+  <span>NEW ARRIVAL SETIAP MINGGU ✦ FREE ONGKIR AREA CIREBON ✦ REAL PICTURE 100% ✦ BISA TUKAR UKURAN ✦</span>
+</div></div>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">New Collection — 2026</div>
+      <h1>Simple<br>style.<span class="serif">Strong character.</span></h1>
+      <p>Fashion pilihan untuk gaya clean, modern, dan percaya diri. Lihat koleksi dan pesan langsung melalui WhatsApp — real picture, tanpa katalog abal-abal.</p>
+      <div class="cta-row">
+        <a class="btn" href="#koleksi">Lihat Koleksi →</a>
+        <a class="btn ghost" href="https://wa.me/6281234567890">Chat WhatsApp</a>
+      </div>
+      <div class="trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Bahan berkualitas</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Real picture</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Bisa tukar ukuran</span>
+      </div>
+    </div>
+
+    <div class="reveal hero-visual">
+      <span class="look-tag">LOOK — 01</span>
+      <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="300" height="400" fill="#e4e8da"/>
+        <line x1="150" y1="18" x2="150" y2="44" stroke="#141414" stroke-width="2"/>
+        <path d="M120 44 Q150 30 180 44" fill="none" stroke="#141414" stroke-width="2"/>
+        <path d="M96 60 L150 44 L204 60 L226 108 L196 122 L182 96 L182 300 L118 300 L118 96 L104 122 L74 108 Z" fill="#fffdf9" stroke="#141414" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M150 44 L138 70 L150 90 L162 70 Z" fill="#5c6b47"/>
+        <line x1="118" y1="150" x2="182" y2="150" stroke="#deded1" stroke-width="1.5"/>
+        <line x1="118" y1="200" x2="182" y2="200" stroke="#deded1" stroke-width="1.5"/>
+        <line x1="118" y1="250" x2="182" y2="250" stroke="#deded1" stroke-width="1.5"/>
+      </svg>
+      <span class="spread-no mono">— SS/26 —</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="koleksi">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:10px">Koleksi Pilihan</div>
+        <h2>Lookbook musim ini</h2>
+      </div>
+      <p>Enam piece favorit dari koleksi terbaru — dipilih untuk mudah dipadukan jadi banyak gaya.</p>
+    </div>
+    <div class="look-grid">
+      <div class="look-card reveal">
+        <div class="look-top"><span class="look-no">LOOK 01</span><span class="look-tag-chip">BEST SELLER</span></div>
+        <div class="photo">👕</div>
+        <div class="look-info">
+          <h3>Essential Oversize Tee</h3>
+          <p>Kaos oversize nyaman untuk daily wear, bahan katun combed 30s.</p>
+          <div class="sizes"><span>S</span><span>M</span><span>L</span><span>XL</span></div>
+          <div class="look-foot"><span class="price">Rp129.000</span><a class="look-link" href="https://wa.me/6281234567890">Chat →</a></div>
+        </div>
+      </div>
+      <div class="look-card reveal">
+        <div class="look-top"><span class="look-no">LOOK 02</span><span class="look-tag-chip">NEW</span></div>
+        <div class="photo">👗</div>
+        <div class="look-info">
+          <h3>Minimal Dress</h3>
+          <p>Potongan clean untuk gaya santai maupun semi-formal.</p>
+          <div class="sizes"><span>S</span><span>M</span><span>L</span></div>
+          <div class="look-foot"><span class="price">Rp249.000</span><a class="look-link" href="https://wa.me/6281234567890">Chat →</a></div>
+        </div>
+      </div>
+      <div class="look-card reveal">
+        <div class="look-top"><span class="look-no">LOOK 03</span><span class="look-tag-chip">LIMITED</span></div>
+        <div class="photo">🧥</div>
+        <div class="look-info">
+          <h3>Daily Overshirt</h3>
+          <p>Mudah dipadukan dengan berbagai outfit, katun twill tebal.</p>
+          <div class="sizes"><span>M</span><span>L</span><span>XL</span></div>
+          <div class="look-foot"><span class="price">Rp219.000</span><a class="look-link" href="https://wa.me/6281234567890">Chat →</a></div>
+        </div>
+      </div>
+      <div class="look-card reveal">
+        <div class="look-top"><span class="look-no">LOOK 04</span><span class="look-tag-chip">NEW</span></div>
+        <div class="photo">👖</div>
+        <div class="look-info">
+          <h3>Straight Denim</h3>
+          <p>Potongan straight fit, denim tebal dengan warna tahan lama.</p>
+          <div class="sizes"><span>S</span><span>M</span><span>L</span></div>
+          <div class="look-foot"><span class="price">Rp239.000</span><a class="look-link" href="https://wa.me/6281234567890">Chat →</a></div>
+        </div>
+      </div>
+      <div class="look-card reveal">
+        <div class="look-top"><span class="look-no">LOOK 05</span><span class="look-tag-chip">BEST SELLER</span></div>
+        <div class="photo">🧣</div>
+        <div class="look-info">
+          <h3>Knit Cardigan</h3>
+          <p>Rajut ringan, cocok untuk layering pagi dan malam.</p>
+          <div class="sizes"><span>S</span><span>M</span><span>L</span></div>
+          <div class="look-foot"><span class="price">Rp189.000</span><a class="look-link" href="https://wa.me/6281234567890">Chat →</a></div>
+        </div>
+      </div>
+      <div class="look-card reveal">
+        <div class="look-top"><span class="look-no">LOOK 06</span><span class="look-tag-chip">LIMITED</span></div>
+        <div class="photo">🎒</div>
+        <div class="look-info">
+          <h3>Utility Tote Bag</h3>
+          <p>Kanvas kokoh, muat laptop 14" dan kebutuhan harian.</p>
+          <div class="sizes"><span>OS</span></div>
+          <div class="look-foot"><span class="price">Rp99.000</span><a class="look-link" href="https://wa.me/6281234567890">Chat →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="guide" style="padding-top:0;background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="eyebrow" style="margin-bottom:10px">Panduan Belanja</div>
+        <h2>Size guide & bahan</h2>
+      </div>
+      <p>Cek ukuran dan jenis bahan sebelum pesan — kalau masih ragu, tinggal chat WhatsApp untuk konsultasi ukuran.</p>
+    </div>
+    <div class="guide">
+      <div class="guide-panel reveal">
+        <h3>Size Chart (cm)</h3>
+        <table class="sizetable">
+          <tr><th>Ukuran</th><th>Lingkar Dada</th><th>Panjang</th><th>Bahu</th></tr>
+          <tr><td>S</td><td>96</td><td>65</td><td>42</td></tr>
+          <tr><td>M</td><td>102</td><td>68</td><td>44</td></tr>
+          <tr><td>L</td><td>108</td><td>71</td><td>46</td></tr>
+          <tr><td>XL</td><td>114</td><td>74</td><td>48</td></tr>
+        </table>
+      </div>
+      <div class="guide-panel reveal">
+        <h3>Pilihan Bahan</h3>
+        <div class="swatch-grid">
+          <div class="swatch"><div class="chip" style="background:#cfc6b0"></div><span>Katun Combed</span></div>
+          <div class="swatch"><div class="chip" style="background:#8891a3"></div><span>Denim</span></div>
+          <div class="swatch"><div class="chip" style="background:#5c6b47"></div><span>Twill</span></div>
+          <div class="swatch"><div class="chip" style="background:#d8cfc0"></div><span>Rajut Wool</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow" style="margin-bottom:10px">Kenapa ÉLANE</div><h2>Belanja tanpa ragu</h2></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.4 14.5 16 10.1a4.6 4.6 0 0 0-6.2-6.2L14.2 8H10v4.2l4.2 4.2a4.6 4.6 0 0 0 6.2-1.9z"/><path d="M3 21l6-6"/></svg>
+        <h3>Bahan Berkualitas</h3>
+        <p>Dipilih dari supplier terpercaya, nyaman dipakai seharian.</p>
+      </div>
+      <div class="why-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+        <h3>Real Picture</h3>
+        <p>Foto produk asli tanpa filter berlebihan, sesuai barang diterima.</p>
+      </div>
+      <div class="why-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7M21 4v5h-5"/></svg>
+        <h3>Bisa Tukar Ukuran</h3>
+        <p>Ukuran kurang pas? Tukar gratis maksimal 2 hari setelah barang diterima.</p>
+      </div>
+      <div class="why-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 8l2-5h14l2 5M12 3v5"/></svg>
+        <h3>Pengiriman Aman</h3>
+        <p>Dikemas rapi dengan packing tahan lipat dan tahan air.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow" style="margin-bottom:10px">Lookbook</div><h2>Dari feed Instagram kami</h2></div>
+    </div>
+    <div class="gallery reveal">
+      <div class="gitem tall" style="background:#e4e8da">👕</div>
+      <div class="gitem" style="background:#ddd4c7">👗</div>
+      <div class="gitem" style="background:#c8c6bd">🧥</div>
+      <div class="gitem tall" style="background:#8891a3;color:#fff">👖</div>
+      <div class="gitem" style="background:#d8cfc0">🧣</div>
+      <div class="gitem" style="background:#5c6b47;color:#fff">🎒</div>
+      <div class="gitem" style="background:#e4e8da">👟</div>
+      <div class="gitem tall" style="background:#ddd4c7">🧢</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow" style="margin-bottom:10px">Kata Mereka</div><h2>Sudah dicoba, sudah dipercaya</h2></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>Bahannya adem, jahitannya rapi. Ukuran sesuai chart jadi ga perlu tukar-tukar.</p>
+        <div class="testi-who"><b>Nadia</b><span>Minimal Dress</span></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>Fotonya sama persis waktu barang sampai. Warnanya juga ga meleset.</p>
+        <div class="testi-who"><b>Rizky</b><span>Daily Overshirt</span></div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>Pertama kali coba tukar ukuran, prosesnya cepat dan gak ribet.</p>
+        <div class="testi-who"><b>Putri</b><span>Essential Tee</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="kontak" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta reveal">
+      <div>
+        <div class="eyebrow" style="color:#c8c6bd">Tertarik dengan koleksi kami?</div>
+        <h2>Chat, cek stok,<br>langsung order.</h2>
+        <p>Cek stok, ukuran, warna, dan cara pemesanan langsung lewat WhatsApp — respon cepat setiap hari.</p>
+        <div class="cta-row" style="margin-top:22px">
+          <a class="btn" href="https://wa.me/6281234567890">Chat WhatsApp →</a>
+          <a class="btn ghost" href="#koleksi">Lihat Koleksi</a>
+        </div>
+      </div>
+      <div class="cta-social">
+        <div class="handle">@elane.id</div>
+        <p>Follow untuk lihat koleksi baru<br>lebih dulu tiap minggu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>© 2026 ÉLANE — Simple style, strong character.</span>
+    <div class="foot-links">
+      <a href="https://wa.me/6281234567890">WhatsApp</a>
+      <a href="#koleksi">Koleksi</a>
+      <a href="#guide">Size Guide</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}
+</script>
+
+</body>
+</html>
